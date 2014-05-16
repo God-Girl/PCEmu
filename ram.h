@@ -1,21 +1,15 @@
 #ifndef RAM_H
 #define RAM_H
 
-#include "cpu.h"
+#include "808x.h"
 
 namespace RAM
 {
-u8 RAM[0x100000];
+extern u8 RAM[0x100000];
 
-u8 rb(u16 seg, u16 off)
-{
-  return RAM[CPU::getaddr(seg,off)];
-}
+u8 rb(u16 seg, u16 off);
 
-void wb(u16 seg, u16 off, u8 data)
-{
-  RAM[CPU::getaddr(seg,off)] = data;
-}
+void wb(u16 seg, u16 off, u8 data);
 
 }
 
